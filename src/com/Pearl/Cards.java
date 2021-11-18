@@ -12,4 +12,6 @@ public class Cards {
    public Integer getValue(){
        return value ;
    }
+
+   //a getter method for suit
 }
