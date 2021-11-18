@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Deck {
     //list to hold card collection
-    static final List<Cards> decks = new ArrayList<>();
+    static final List<Card> decks = new ArrayList<>();
 
     //manufacture cards
     private void manufactureCards(){
@@ -13,35 +13,35 @@ public class Deck {
             for(int b = 2; b <= 11; b++){
                 switch (i){
                     case 0 -> {
-                        decks.add(new Cards(Suits.CLUB, b));
+                        decks.add(new Cards(Suit.CLUB, b));
                         if (b == 10) {
-                            decks.add(new Cards(Suits.CLUBJACK,b)) ;
-                            decks.add(new Cards(Suits.CLUBQUEEN,b)) ;
-                            decks.add(new Cards(Suits.CLUBKING,b)) ;
+                            decks.add(new Cards(Suit.CLUBJACK,b)) ;
+                            decks.add(new Cards(Suit.CLUBQUEEN,b)) ;
+                            decks.add(new Cards(Suit.CLUBKING,b)) ;
                         }
                     }
                     case 1 -> {
-                        decks.add(new Cards(Suits.DIAMOND,b));
+                        decks.add(new Cards(Suit.DIAMOND,b));
                         if (b == 10) {
-                            decks.add(new Cards(Suits.DIAMONDJACK,b)) ;
-                            decks.add(new Cards(Suits.DIAMONDQUEEN,b)) ;
-                            decks.add(new Cards(Suits.DIAMONDKING,b)) ;
+                            decks.add(new Cards(Suit.DIAMONDJACK,b)) ;
+                            decks.add(new Cards(Suit.DIAMONDQUEEN,b)) ;
+                            decks.add(new Cards(Suit.DIAMONDKING,b)) ;
                         }
                     }
                     case 2 -> {
-                        decks.add(new Cards(Suits.HEART, b));
+                        decks.add(new Cards(Suit.HEART, b));
                         if (b == 10) {
-                            decks.add(new Cards(Suits.HEARTJACK,b)) ;
-                            decks.add(new Cards(Suits.HEARTQUEEN,b)) ;
-                            decks.add(new Cards(Suits.HEARTKING,b)) ;
+                            decks.add(new Cards(Suit.HEARTJACK,b)) ;
+                            decks.add(new Cards(Suit.HEARTQUEEN,b)) ;
+                            decks.add(new Cards(Suit.HEARTKING,b)) ;
                         }
                     }
                     case 3 -> {
-                        decks.add(new Cards(Suits.SPADE, b));
+                        decks.add(new Cards(Suit.SPADE, b));
                         if (b == 10) {
-                            decks.add(new Cards(Suits.SPADEJACK,b)) ;
-                            decks.add(new Cards(Suits.SPADEQUEEN,b)) ;
-                            decks.add(new Cards(Suits.SPADEKING,b)) ;
+                            decks.add(new Cards(Suit.SPADEJACK,b)) ;
+                            decks.add(new Cards(Suit.SPADEQUEEN,b)) ;
+                            decks.add(new Cards(Suit.SPADEKING,b)) ;
                         }
                     }
                 }
