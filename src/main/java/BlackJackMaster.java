@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 //blackjackMaster controls the game
 public class BlackJackMaster {
-    Scanner scanner = new Scanner(System.in);
+    /*Scanner scanner = new Scanner(System.in);
     Integer numOfPlayers;
 
     private void masterIsSpeaking(){
@@ -23,6 +23,5 @@ public class BlackJackMaster {
         //rest of the game proceeds
      }
 
-
-
+*/
 }
