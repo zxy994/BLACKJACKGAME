@@ -14,6 +14,10 @@ public enum Rank {
     KING(10),
     ACE(11);
 
+    public int getRankValue() {
+        return rankValue;
+    }
+
     //Instance variable
     private int rankValue;
 

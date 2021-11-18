@@ -1,10 +1,11 @@
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class Deck {
     // list to hold card collection
-    public List<Card> decks = new ArrayList<>();
+    public static List<Card> decks = new ArrayList<>();
 
     //manufacture cards
     private void manufactureCards(){
@@ -23,14 +24,33 @@ public class Deck {
     }
 
     //method to shuffle deck
-    public void shuffleDeck(){
-
+    public List shuffleDeck(){
+         Collections.shuffle(decks);
+        return decks ;
     }
 
     //method to deal player two cards at the start of black jack or
     //a card when a player hits
-    public void dealCards(){
 
+    public List<Card> dealCardAtStartGame(){
+
+    //new list to hold two cards at the start of the game
+        List<Card> cardsAssignedToPlayer = new ArrayList<>();
+
+    //first card assigned
+        cardsAssignedToPlayer.add(decks.get(decks.size()-1));
+        decks.remove(decks.size()-1) ;
+
+     //second card assigned
+        cardsAssignedToPlayer.add(decks.get(decks.size()-1));
+        decks.remove(decks.size()-1) ;
+
+        //Player player = new Player(cardsAssignedToPlayer);
+        return cardsAssignedToPlayer;
     }
 
+    public void dealACardIfHit() {
+        Player player = new Player();
+        decks.remove(decks.size()-1) ;
+    }
 }
