@@ -17,6 +17,8 @@ class BlackJackMasterTest {
 
         player.getTotalValueOfCardsInHand();
 
-        assertEquals(19,player.getTotalValueOfCardsInHand());
+        int playerTotalCardsValue =player.getTotalValueOfCardsInHand();
+
+        assertEquals(19,playerTotalCardsValue);
     }
 }
