@@ -24,7 +24,7 @@ public class Deck {
     }
 
     //method to shuffle deck
-    public List shuffleDeck(){
+    public List<Card> shuffleDeck(){
          Collections.shuffle(decks);
         return decks ;
     }
@@ -45,12 +45,11 @@ public class Deck {
         cardsAssignedToPlayer.add(decks.get(decks.size()-1));
         decks.remove(decks.size()-1) ;
 
-        //Player player = new Player(cardsAssignedToPlayer);
         return cardsAssignedToPlayer;
     }
 
     public void dealACardIfHit() {
-        Player player = new Player();
+        new Player();
         decks.remove(decks.size()-1) ;
     }
 }

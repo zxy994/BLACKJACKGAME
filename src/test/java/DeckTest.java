@@ -16,11 +16,28 @@ class DeckTest {
         // creating new deck
         standardDeck = deck.newDeck();
 
-        // System.out.println(standardDeck);
+        assertEquals(52, standardDeck.size());
+
+    }
+
+    @Test
+    void shuffleDeck() {
+        // creating new deck
+        standardDeck = deck.newDeck();
+
+        System.out.println(standardDeck);
 
         // shuffling our deck
         shuffledDeck = deck.shuffleDeck();
-    //    System.out.println(shuffledDeck);
+           System.out.println(shuffledDeck);
+    }
+
+    @Test
+    void dealCardAtStartGame() {
+        // creating new deck
+        standardDeck = deck.newDeck();
+        //shuffling deck
+        shuffledDeck = deck.shuffleDeck() ;
 
         // creating a new player list
         List<Player> playerList = List.of(
@@ -29,23 +46,25 @@ class DeckTest {
                 new Player(deck.dealCardAtStartGame())
         );
 
-          Player playerOne =  playerList.get(0);
+        Player playerOne =  playerList.get(0);
         System.out.println(playerOne.getCardsInHand());
 
         assertEquals(46, standardDeck.size());
-
-        /*deck.dealCardAtStartGame();
-
-        assertEquals(50, standardDeck.size());
-
-        deck.dealACardIfHit();
-        deck.dealACardIfHit();
-
-        //assertEquals(4,Player.cardsInHand.size());
-        assertEquals(49, standardDeck.size());
-        */
-
-
     }
 
+    @Test
+    void dealACardIfHit() {
+        // creating new deck
+        standardDeck = deck.newDeck();
+        //shuffling deck
+        shuffledDeck = deck.shuffleDeck() ;
+
+        Player player = new Player(deck.dealCardAtStartGame()) ;
+        System.out.println(player.getCardsInHand());
+
+        deck.dealACardIfHit();
+        System.out.println(player.getCardsInHand());
+        assertEquals(3,Player.cardsInHand.size());
+        assertEquals(49, standardDeck.size());
+    }
 }

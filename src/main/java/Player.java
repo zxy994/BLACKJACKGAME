@@ -1,9 +1,9 @@
 import java.util.List;
 
 public class Player {
-    List<Card> cardsInHand;
+    static List<Card> cardsInHand;
 
-    Player(List cards){
+    Player(List<Card> cards){
         cardsInHand = cards ;
             }
 
