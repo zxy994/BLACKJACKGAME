@@ -3,8 +3,11 @@ import java.util.List;
 
 public class Player {
      List<Card> cardsInHand;
+     String status = "";
 
-    Player(List<Card> cards){cardsInHand = cards;}
+    public Player(List<Card> cards){cardsInHand = cards;}
+
+    public Player(){}
 
     void givePlayerACard(){cardsInHand.add(Deck.decks.get(Deck.decks.size()-1));}
 
@@ -12,6 +15,14 @@ public class Player {
 
     public Integer getTotalValueOfCardsInHand() {
         return cardsInHand.stream().mapToInt(player -> player.getRankValue()).sum();
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     @Override
