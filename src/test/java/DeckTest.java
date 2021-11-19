@@ -48,6 +48,7 @@ class DeckTest {
 
         Player playerOne =  playerList.get(0);
         System.out.println(playerOne.getCardsInHand());
+        System.out.println(playerOne.getTotalValueOfCardsInHand());
 
         assertEquals(46, standardDeck.size());
     }
@@ -62,9 +63,9 @@ class DeckTest {
         Player player = new Player(deck.dealCardAtStartGame()) ;
         System.out.println(player.getCardsInHand());
 
-        deck.dealACardIfHit();
+        deck.dealACardIfHit(player);
         System.out.println(player.getCardsInHand());
-        assertEquals(3,Player.cardsInHand.size());
+        assertEquals(3,player.getCardsInHand().size());
         assertEquals(49, standardDeck.size());
     }
 }
