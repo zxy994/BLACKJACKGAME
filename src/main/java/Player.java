@@ -1,18 +1,34 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Player {
-    static List<Card> cardsInHand;
+     List<Card> cardsInHand;
+     String status = "";
 
-    Player(List<Card> cards){
-        cardsInHand = cards ;
-            }
+    public Player(List<Card> cards){cardsInHand = cards;}
 
-            Player(){
-        cardsInHand.add(Deck.decks.get(Deck.decks.size()-1)) ;
-            }
+    public Player(){}
 
-    public List<Card> getCardsInHand() {
-        return cardsInHand;
+    void givePlayerACard(){cardsInHand.add(Deck.decks.get(Deck.decks.size()-1));}
+
+    public List<Card> getCardsInHand() { return this.cardsInHand;}
+
+    public Integer getTotalValueOfCardsInHand() {
+        return cardsInHand.stream().mapToInt(player -> player.getRankValue()).sum();
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "\nPlayer{ " +
+                "cardsInHand=\n" + cardsInHand +
+                "}\n";
+    }
 }

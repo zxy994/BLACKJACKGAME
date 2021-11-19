@@ -48,8 +48,8 @@ public class Deck {
         return cardsAssignedToPlayer;
     }
 
-    public void dealACardIfHit() {
-        new Player();
+    public void dealACardIfHit(Player player) {
+        player.givePlayerACard();
         decks.remove(decks.size()-1) ;
     }
 }

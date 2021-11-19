@@ -2,12 +2,10 @@
 public class Card {
     private Suit suit;
     private Rank rank;
-    private Integer rankValue;
 
     public Card(Suit suit, Rank rank) {
         this.suit = suit;
         this.rank = rank;
-        this.rankValue = rank.getRankValue();
     }
 
     public Suit getSuit() {
@@ -18,14 +16,14 @@ public class Card {
         return rank;
     }
 
-    public Integer getRankValue() { return rankValue; }
+    public Integer getRankValue() { return rank.getRankValue(); }
 
     @Override
     public String toString() {
-        return "Card{" +
+        return "\n\tCard{" +
                 "suit=" + suit +
                 ", rank=" + rank +
-                ", rankValue=" + rankValue +
+                ", rankValue=" + rank.getRankValue() +
                 '}';
     }
 }
